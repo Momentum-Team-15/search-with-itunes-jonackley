@@ -1,31 +1,34 @@
 const container = document.querySelector('.container');
+const searchbox = document.querySelector('#artist');
 
-const url = 'https://itunes.apple.com/search?term=jack+johnson&limit=8.'
-let result
+const form = document.querySelector("form");
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    let search = searchbox.value;
+    
+    const url = `https://itunes.apple.com/search?term=${search}&limit=8`
 
-fetch(url, {
-    method: 'GET',
-    headers: {'Content_Type' : 'application/json'},
+    fetch(url, {
+        method: 'GET',
+        headers: { 'Content_Type': 'application/json' },
 
-})
+    })
 
-.then(function(response) {
-    return response.json()
-})
+        .then(function (response) {
+            return response.json()
+        })
 
-.then(function(musics){
-    console.log(musics)
-   for(let music of musics.results) {
-      console.log(`${music.trackName} by ${music.artistName} ${music.artworkUrl100}`)
+        .then(function (musics) {
+            console.log(musics);
+           
+            buildGrid(musics.results);
 
-   }
-    buildGrid(musics.results)        
-      
 
+        })
 })
 
 function buildGrid(musicArray) {
-    for (let song of musicArray){
+    for (let song of musicArray) {
         let resultsDiv = document.createElement('div');
         let title = document.createElement('h4');
         title.innerText = song.trackName

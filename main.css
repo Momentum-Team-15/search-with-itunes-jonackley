@@ -1,3 +1,9 @@
 .container {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.songinfo {
+    width: 20%;
+    border: 2px solid black;
 }

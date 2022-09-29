@@ -2,7 +2,9 @@ const container = document.querySelector('.container');
 const searchbox = document.querySelector('#artist');
 
 const form = document.querySelector("form");
+    console.log(form);
 form.addEventListener('submit', event => {
+    console.log("submitted");
     event.preventDefault();
     let search = searchbox.value;
     
@@ -28,8 +30,15 @@ form.addEventListener('submit', event => {
 })
 
 function buildGrid(musicArray) {
+ 
     for (let song of musicArray) {
+
+
+
         let resultsDiv = document.createElement('div');
+
+        // let player = document.createElement("audio");
+       
         let title = document.createElement('h4');
         title.innerText = song.trackName
         title.classList.add('title')

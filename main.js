@@ -37,29 +37,34 @@ function buildGrid(musicArray) {
 
         let resultsDiv = document.createElement('div');
 
-        // let player = document.createElement("audio");
-       
+        
         let title = document.createElement('h4');
-        title.innerText = song.trackName
-        title.classList.add("title")
-        resultsDiv.appendChild(title)
-
+        title.innerText = song.trackName;
+        title.classList.add("title");
+        resultsDiv.appendChild(title);
+        
         let album = document.createElement("h5");
-        album.innerText = song.collectionName
-        album.classList.add("album")
-        resultsDiv.appendChild(album)
-
+        album.innerText = song.collectionName;
+        album.classList.add("album");
+        resultsDiv.appendChild(album);
+        
         let artist = document.createElement('h5');
-        artist.innerText = song.artistName
-        artist.classList.add("artist")
-        resultsDiv.appendChild(artist)
-
+        artist.innerText = song.artistName;
+        artist.classList.add("artist");
+        resultsDiv.appendChild(artist);
+        
         let artwork = document.createElement("img");
-        artwork.src = song.artworkUrl100
-        artwork.classList.add("artwork")
-        resultsDiv.appendChild(artwork)
+        artwork.src = song.artworkUrl100;
+        artwork.classList.add("artwork");
+        resultsDiv.appendChild(artwork);
+        
+        let player = document.createElement("audio");
+        player.src = `${song.previewUrl}`;
+        player.controls = true;
+        player.classList.add("player");
+        resultsDiv.appendChild(player);
 
-        resultsDiv.classList.add("songinfo")
+        resultsDiv.classList.add("songinfo");
 
         container.appendChild(resultsDiv)
     }

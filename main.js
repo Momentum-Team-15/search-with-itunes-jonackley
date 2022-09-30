@@ -41,22 +41,26 @@ function buildGrid(musicArray) {
        
         let title = document.createElement('h4');
         title.innerText = song.trackName
-        title.classList.add('title')
+        title.classList.add("title")
         resultsDiv.appendChild(title)
 
         let album = document.createElement("h5");
         album.innerText = song.collectionName
+        album.classList.add("album")
         resultsDiv.appendChild(album)
 
         let artist = document.createElement('h5');
         artist.innerText = song.artistName
+        artist.classList.add("artist")
         resultsDiv.appendChild(artist)
 
         let artwork = document.createElement("img");
         artwork.src = song.artworkUrl100
+        artwork.classList.add("artwork")
         resultsDiv.appendChild(artwork)
 
         resultsDiv.classList.add("songinfo")
+
         container.appendChild(resultsDiv)
     }
 }

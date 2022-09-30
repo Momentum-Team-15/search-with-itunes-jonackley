@@ -1,3 +1,8 @@
+//here goes something...js!
+
+// first, we need to tell js to build a form, so it can recieve info. we do this by const a form 
+// then we tell it to to take the info from the user via addEventListener
+
 const container = document.querySelector('.container');
 const searchbox = document.querySelector('#artist');
 
@@ -13,6 +18,7 @@ form.addEventListener('submit', event => {
     fetch(url, {
         method: 'GET',
         headers: { 'Content_Type': 'application/json' },
+
 
     })
 
